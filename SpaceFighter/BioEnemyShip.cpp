@@ -16,10 +16,15 @@ void BioEnemyShip::Update(const GameTime& gameTime)
 	if (IsActive())
 	{
 		float x = sin(gameTime.GetTotalTime() * Math::PI + GetIndex());
-		x *= GetSpeed() * gameTime.GetElapsedTime() * 1.4f;
-		TranslatePosition(x, GetSpeed() * gameTime.GetElapsedTime());
+		x = 0;
+		TranslatePosition(x, 800 * gameTime.GetElapsedTime());
 
-		if (!IsOnScreen()) Deactivate();
+		if (!IsOnScreen())
+		{
+			Deactivate();
+			std::cout << "A ship has been deactivated" << "\n";
+		}
+
 	}
 
 	EnemyShip::Update(gameTime);
