@@ -28,7 +28,7 @@ void GameplayScreen::LoadLevel(const int levelIndex)
 
 	switch (levelIndex)
 	{
-	case 0: m_pLevel = new Level02(); break;
+	case 0: m_pLevel = new Level01(); break;
 	}
 
 	m_pLevel->SetGameplayScreen(this);

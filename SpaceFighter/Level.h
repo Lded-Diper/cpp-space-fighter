@@ -5,6 +5,7 @@
 #include "PlayerShip.h"
 #include "CollisionManager.h"
 #include "Explosion.h"
+#include "LargeShip.h"
 
 using namespace KatanaEngine;
 

@@ -1,36 +1,35 @@
 
-#include "BioEnemyShip.h"
+#include "LargeShip.h"
 #include "Level.h"
 
 
-BioEnemyShip::BioEnemyShip()
+LargeShip::LargeShip()
 {
-	SetSpeed(150);
-	SetMaxHitPoints(1);
+	SetSpeed(50);
+	SetMaxHitPoints(5);
 	SetCollisionRadius(20);
 }
 
 
-void BioEnemyShip::Update(const GameTime& gameTime)
+void LargeShip::Update(const GameTime& gameTime)
 {
 	if (IsActive())
 	{
-		float x = sin(gameTime.GetTotalTime() * Math::PI + GetIndex());
+		float x = 0;
 		TranslatePosition(x, GetSpeed() * gameTime.GetElapsedTime());
 
 		if (!IsOnScreen())
 		{
 			Deactivate();
-			std::cout << "A ship has been deactivated" << "\n";
+			std::cout << "A Large ship has been deactivated" << "\n";
 		}
 
 	}
-
 	EnemyShip::Update(gameTime);
 }
 
 
-void BioEnemyShip::Draw(SpriteBatch& spriteBatch)
+void LargeShip::Draw(SpriteBatch& spriteBatch)
 {
 	if (IsActive())
 	{
